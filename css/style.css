@@ -1,14 +1,45 @@
 
 /* Adding root variables */
 :root {
+    /* Ribbon */
+    --ribbon-color: #ED2939;
 
+    /* Card Spectrum */
+    --1st-spectrum-color: #FFF;
+    --2nd-spectrum-color: #FFFF00;
+    --3rd-spectrum-color: #03FFFF;
+    --4th-spectrum-color: #03FF00;
+    --5th-spectrum-color: #FF00FF;
+    --6th-spectrum-color: #FF0000;
+    --7th-spectrum-color: #0000FF;
+
+    /* Grayscale Spectrum */
+    --1st-black-spectrum-color: #000;
+    --1st-white-spectrum-color: #FFF;
+    --2nd-black-spectrum-color: #000;
 }
 
 /* Global Reset */
 * {
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     
 }
+
+/* Ribbon Styling */
+.ribbon {
+    height: 42px;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--ribbon-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Use first child & last child to style p tags */
