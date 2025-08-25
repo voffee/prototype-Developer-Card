@@ -8,7 +8,7 @@
     --dark-text-color: #36454F;
 
     /* Page Background Color */
-    --page-background-color: #F8F9FB;
+    --page-background-color: #F0F0F0;
 
     /* Card Spectrum */
     --1st-spectrum-color: #FFF;
@@ -29,6 +29,7 @@
     --reverse-face-color-2:#2AF0FF;
     --reverse-face-color-3:#D383FF;
     --reverse-face-color-4:#FE4880;
+    --reverse-face-bottom-color: #FFF;
 }
 
 /* Global Reset */
@@ -72,6 +73,17 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    & a {
+        text-decoration: none;
+    }
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 44px;
 }
 
 /* Card Container */
@@ -87,14 +99,16 @@ body {
     height: 450px;
     width: 300px;
     margin: 5px;
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 10px 10px 10px 10px;
+}
 
-    .analog-spectrum-container {
-        display: grid;
-        grid-template-columns: 42.85px 42.85px 42.85px 42.85px 42.85px 42.85px 42.85px ;
-        grid-template-rows: 350px 100px;
-        /* border: solid #000 1px; */
-        border-radius: 10px 10px 10px 10px;
-    }
+.card-obverse .analog-spectrum-container {
+    display: grid;
+    grid-template-columns: 42.85px 42.85px 42.85px 42.85px 42.85px 42.85px 42.85px ;
+    grid-template-rows: 350px 100px;
+    /* border: solid #000 1px; */
+    border-radius: 10px 10px 10px 10px;
 }
 
 /* Spectrum Styling */
@@ -180,24 +194,76 @@ body {
     height: 450px;
     width: 300px;
     margin: 5px;
+    background-color: var(--reverse-face-bottom-color);
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
 
     .tab-portion {
-        height: 150px;
+        height: 200px;
         width: 300px;
         background-image: linear-gradient(30deg, var(--reverse-face-color-1),var(--reverse-face-color-2),var(--reverse-face-color-3),var(--reverse-face-color-4));
         border-radius: 10px 10px 70px 0px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tab-portion p {
+        font-weight: 600;
+        font-size: 22px;
     }
 
     .profile-portion {
-        background-color: #000;
+        height: 250px;
+        width: 300px;
+        background-color: var(--reverse-face-bottom-color);
         border-radius: 0px 0px 10px 10px;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr 1fr;
     }
 }
 
+/* Profile Portion Grid Item Positioning */
+.profile-portion p:nth-child(1) {
+    font-size: 18px;
+    font-weight: 600;
+    align-self: center;
+    justify-self: center;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.profile-portion p:nth-child(2) {
+    align-self: center;
+    justify-self: center;
+    text-align: justify;
+    padding: 5px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.profile-portion p:nth-child(3) {
+    align-self: center;
+    justify-self: center;
+    text-align: justify;
+    padding: 5px;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
 /* Profile Image Styling */
 #profile-image {
     height: 90px;
     width: auto;
     border: 5px solid white;
     border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Flipping Class */
+.is-flipped {
+    display: none;
 }
